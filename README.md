@@ -42,3 +42,7 @@ assert fsm.check_string("b") is True
 assert fsm.check_string("aaaab") is True
 assert fsm.check_string("c") is False
 ```
+
+## FSM example
+
+![Finite State Machin](fsm_astarb.png)
