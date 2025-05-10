@@ -319,8 +319,7 @@ class RegexFSM:
                     prev_prev_state, prev_state = prev_state, state
                     i += 1
 
-        terminator = TerminationState()
-        prev_state.next_states.append(terminator)
+        prev_state.next_states.append(TerminationState())
 
     @staticmethod
     def star_followed_by_charclass_plus(expr: str, star_idx: int) -> bool:
@@ -375,7 +374,7 @@ class RegexFSM:
             for next_state in state.next_states
             if next_state.is_final
         }
-        return any(st.is_final for st in current)
+        return any(state.is_final for state in current)
 
 
 if __name__ == "__main__":
